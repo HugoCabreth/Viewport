@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(63, 89, 129);
+    color:rgb(255, 255, 255);
+}
+
+#contenedor{
+    width: 90% ;
+    max-width: 1000px ;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header     header      header"
+                         "contenido  contenido   sidebar"
+                         "widget-1   widget-2    sidebar" 
+                         "footer     footer      footer";
+    
+    
+    background: rgb (102, 19, 19);
+}
+
+.bordes{
+    background-color: rgb(27, 37, 44);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#header{
+    background-color:rgb(33, 51, 63);
+    grid-area: header;
+}
+
+#contenido{
+    grid-area:contenido;
+}
+
+#sidebar{
+    grid-column:3/4;
+    background-color: rgb(33, 51, 63);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: sidebar;
+
+}
+
+#widget-1{
+    grid-area: widget-1;
+}
+
+#widget-2{
+    grid-area: widget-2;
+}
+
+.wid{
+    background-color: rgb(83, 138, 170);
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer{
+    background-color: rgb(12, 17, 19);
+    grid-area: footer;
+
+}
+
+/*-------------Arroba Media-----------------------*/
+
+@media screen and (max-width: 768px){
+    #contenedor {
+        grid-template-areas: "header      header      header"
+                             "contenido   contenido   contenido"
+                             "sidebar     sidebar     sidebar"
+                             "widget-1    widget-1    widget-2"
+                             "footer      footer      footer";
+    }
+    
+}
